@@ -1,42 +1,11 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <TargetFrameworks>net48;netstandard2.1;netcoreapp3.1;net5.0</TargetFrameworks>
-    <OutputType>Library</OutputType>
-    <RootNamespace>SubSonic</RootNamespace>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-		<DebugType>Full</DebugType>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <DocumentationFile>bin\Debug\SubSonic.Core.XML</DocumentationFile>
-    <NoWarn>1591</NoWarn>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-	<PropertyGroup Condition="'$(TargetFramework)'=='net5.0'">
-		<DefineConstants>$(DefineConstants);FEATURE_SQLMETHODS</DefineConstants>
-	</PropertyGroup>	
+
   <ItemGroup>
-    <Reference Update="System.Core" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.3" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="LICENSE.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="System.Data.SQLite" Version="1.0.112.2" />
-    <PackageReference Include="Castle.Core">
-      <Version>4.4.1</Version>
-    </PackageReference>
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
-    <PackageReference Include="System.Data.Common" Version="4.3.0" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
-  </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)'=='net5.0'">
-    <Reference Include="System.Transactions" />
-    <Reference Include="System.Data.Linq" />
-  </ItemGroup>
+
 </Project>
